@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1>John's Surveillance Actor Network</h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: full;
+            height: 1080;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "Red", "id": "John", "label": "John", "physics": false, "shape": "dot", "size": 100}, {"color": "Blue", "id": "Gadgets", "label": "Gadgets", "shape": "dot", "size": 30}, {"color": "Red", "id": "Tech Companies", "label": "Tech Companies", "shape": "dot", "size": 20}, {"color": "Red", "id": "Government ", "label": "Government ", "shape": "dot", "size": 20}, {"color": "Blue", "id": "Social Media", "label": "Social Media", "shape": "dot", "size": 30}, {"color": "Red", "id": "Data Firms", "label": "Data Firms", "shape": "dot", "size": 15}, {"color": "Blue", "id": "Network", "label": "Network", "shape": "dot", "size": 15}, {"color": "Red", "id": "Shareholder ", "label": "Shareholder ", "shape": "dot", "size": 15}, {"color": "Blue", "id": "Advertisements", "label": "Advertisements", "shape": "dot", "size": 20}, {"color": "Red", "id": "Corperations", "label": "Corperations", "shape": "dot", "size": 20}]);
+        edges = new vis.DataSet([{"color": "Black", "from": "John", "label": "Demand their use for their necessary roles in this technocapitalist society", "to": "Gadgets", "weight": 1}, {"color": "Black", "from": "John", "label": "Encourages further purchases of more ecosystem products", "to": "Tech Companies", "weight": 1}, {"color": "Black", "from": "John", "label": "Requests my compliance to the law with no digital data", "to": "Government ", "weight": 1}, {"color": "Yellow", "from": "John", "label": "Allows me to connect with others and be influenced by advertisements", "to": "Social Media", "weight": 1}, {"color": "Black", "from": "Gadgets", "label": "Demands data that I may not consent to for use", "to": "Tech Companies", "weight": 1}, {"color": "Yellow", "from": "Gadgets", "label": "Allows for my access to social media", "to": "Social Media", "weight": 1}, {"color": "Black", "from": "Tech Companies", "label": "Request my data to personalize ads for me without my knowledge", "to": "Data Firms", "weight": 1}, {"color": "Black", "from": "Tech Companies", "label": "Requests my personal data for security / Refuses to provide data for privacy", "to": "Government ", "weight": 1}, {"color": "Black", "from": "Tech Companies", "label": "Allows for companies to find data firms for selling data", "to": "Network", "weight": 1}, {"color": "Green", "from": "Tech Companies", "label": "Requests ongoing data selling to continue for maximized profit", "to": "Shareholder ", "weight": 1}, {"color": "Yellow", "from": "Data Firms", "label": "Allow for access to my data for personal manipulative ads", "to": "Advertisements", "weight": 1}, {"color": "Black", "from": "Data Firms", "label": "Request for any data gained on me through my interactions with ads ", "to": "Social Media", "weight": 1}, {"color": "Yellow", "from": "Data Firms", "label": "Demand customers from advertisements that are paid for", "to": "Corperations", "weight": 1}, {"color": "Black", "from": "Data Firms", "label": "Allows to find potential buyers of data", "to": "Network", "weight": 1}, {"color": "Yellow", "from": "Advertisements", "label": "Request prime position to take my attention", "to": "Social Media", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"physics": {"barnesHut": {"gravitationalConstant": -25000, "centralGravity": 0.005, "springLength": 650, "overlap": 1, "damping": 0.5}, "minVelocity": 0.75}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
