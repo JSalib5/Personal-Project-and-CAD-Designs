@@ -8,3 +8,5 @@ A storage location for engineering projects that employ Fusion360, AutoCAD, Exce
   - Created Keyboard case for 3D printing and to build a custom board
 
   - Custom graph network maker from an Excel file
+
+  - Verilog / System Verilog Implementations of a 2-parallel numerically controlled oscillatory and IVDS IP Core Initialization Sequence
