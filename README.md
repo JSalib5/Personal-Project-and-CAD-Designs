@@ -9,4 +9,4 @@ A storage location for engineering projects that employ Fusion360, AutoCAD, Exce
 
   - Custom graph network maker from an Excel file
 
-  - Verilog / System Verilog Implementations of a 2-parallel numerically controlled oscillatory and IVDS IP Core Initialization Sequence
+  - Verilog / System Verilog Implementations of a 2-parallel numerically controlled oscillator and IVDS IP Core Initialization Sequence
